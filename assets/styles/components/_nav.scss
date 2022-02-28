@@ -1,0 +1,29 @@
+.primary-nav {
+  position: relative;
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+
+  nav {
+    height: 60px;
+
+    ul {
+      list-style: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+	    margin-left: 6vh;
+	    color: black;
+      
+      li:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

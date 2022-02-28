@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+<div class="toto">
+	<section>
+	<form method="post">
+		<h3>Register Here</h3>
+
+		{{ form_start(registrationForm) }}
+		{{ form_row(registrationForm.email) }}
+		{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+
+		<button type="submit" class="btn">Register</button>
+		</form>
+	</section>
+	</div>
+{% endblock %}

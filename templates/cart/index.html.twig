@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre panier{% endblock %}
+
+{% block body %}
+<div class="cart-section">
+  <div class="d-flex justify-content-center align-items-center" style="padding-top: 13vh;">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="col">
+                        <h4><b>Shopping Cart</b></h4>
+                    </div>
+                    <div class="col align-self-center text-right text-muted">{{itemsQty}} items</div>
+                </div>
+            </div>
+             {% for element in dataPanier %}
+            <div class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                    <div class="col-2"><img class="img-fluid imgCart" src="{{element.produit.imagePath}}"></div>
+                    <div class="col">
+                        <div class="row text-muted">Shirt</div>
+                        <div class="row">{{element.produit.name}}</div>
+                    </div>
+                    <div class="col"> <a href="{{path("cart_remove", {id: element.produit.id})}}">-</a><span>{{ element.quantite }}</span><a href="{{path("cart_add", {id: element.produit.id})}}">+</a> </div>
+                    <div class="col">&euro; {{element.produit.price}}<a href="{{path("cart_delete", {id: element.produit.id})}}" class="close">&#10005;</a></div>
+                </div>
+            </div>
+            {% else %}
+                <div class="row">
+                    <span class="border">Votre panier est vide</span>
+                </div>
+
+            {% endfor %}
+    
+    
+            <div class="back-to-shop"><a href="/">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+        </div>
+        <div class="col-md-4 summary">
+            <div>
+                <h5><b>Summary</b></h5>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col" style="padding-left:0;">{{itemsQty}} ITEMS</div>
+                <div class="col text-right">&euro; {{ total }}</div>
+            </div>
+            <form>
+                <p>SHIPPING</p> <select>
+                    <option class="text-muted">Standard-Delivery- &euro;5.00</option>
+                </select>
+                <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
+            </form>
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL PRICE</div>
+                <div class="col text-right">&euro; {{ total + 5 }}</div>
+            </div> <button class="btn">CHECKOUT</button>
+        </div>
+    </div>
+</div>
+</div>
+    
+{% endblock %}
