@@ -3,6 +3,16 @@
 {% block title %}Votre panier{% endblock %}
 
 {% block body %}
+<header class="primary-nav">
+				<nav aria-label="primary navigation">
+					<ul>
+						<li><a href="/"><img src="https://docs.ypariset.fr/img/logo-black.png" width="35" height="25"></img></li></a>
+						<li><a class="text-black text-monospace text-decoration-none" href="/home">Home</a></li>
+						<li><a class="text-black text-monospace text-decoration-none" href="/cart">Cart</a></li>
+						<li><a class="text-black text-monospace text-decoration-none" href="/logout">Logout</a></li>
+					</ul>
+				</nav>
+			</header>
 <div class="cart-section">
   <div class="d-flex justify-content-center align-items-center" style="padding-top: 13vh;">
     <div class="row">
@@ -35,7 +45,7 @@
             {% endfor %}
     
     
-            <div class="back-to-shop"><a href="/">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+            <div class="back-to-shop"><a href="/home">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
         </div>
         <div class="col-md-4 summary">
             <div>
@@ -55,7 +65,7 @@
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
                 <div class="col text-right">&euro; {{ total + 5 }}</div>
-            </div> <button class="btn">CHECKOUT</button>
+            </div> <a href="{{ path('cart_order') }}" class="btn">CHECKOUT</a>
         </div>
     </div>
 </div>

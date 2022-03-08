@@ -7,7 +7,12 @@
 <div class="toto">
 	<section>
 	<form method="post">
-		<h3>Register Here</h3>
+		<div class="mb-4"><a href="/">&leftarrow;</a><span>  Back</span></div>
+
+		<h3>Register</h3>
+
+												 
+									
 
 		{{ form_start(registrationForm) }}
 		{{ form_row(registrationForm.email) }}
@@ -15,7 +20,10 @@
             label: 'Password'
         }) }}
 
-		<button type="submit" class="btn">Register</button>
+		<button class="btn btn-lg btn-primary" type="submit">
+					Register
+				</button>
+		{{ form_end(registrationForm) }}
 		</form>
 	</section>
 	</div>

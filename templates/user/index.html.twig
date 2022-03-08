@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+<header class="primary-nav">
+				<nav aria-label="primary navigation">
+					<ul>
+						<li><a href="/"><img src="https://docs.ypariset.fr/img/logo-black.png" width="35" height="25"></img></li></a>
+						<li><a class="text-black text-monospace text-decoration-none" href="/home">Home</a></li>
+						<li><a class="text-black text-monospace text-decoration-none" href="/cart">Cart</a></li>
+						<li class="ml-auto mr-5"><a href="/user"><i class="fas fa-2xl fa-circle-user mr-3" style="color: black"></i></a><a class="text-black text-monospace text-decoration-none" href="/logout">Logout</a></li>
+					</ul>
+				</nav>
+</header>
+    <section class="toto container">
+        <h1>Commandes</h1>
+        <div class="commands">
+            <ul class="commands__list">
+                {% for command in commands %}
+                    <li class="commands__list__item">
+                        <div class="commands__list__item__left">
+                            <span>Commande n°{{ command.id }}</span>
+                        </div>
+                        <div class="commands__list__item__right">
+                            <span>le {{ command.date | date('d/m/Y') }}</span>
+                            <span>{{ command.price }},00€</span>
+                        </div>
+                    </li>
+                {% endfor %}  
+            </ul>
+        </div>
+    </section>
+{% endblock %}
