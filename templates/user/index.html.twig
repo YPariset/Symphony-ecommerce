@@ -13,22 +13,43 @@
 					</ul>
 				</nav>
 </header>
-    <section class="toto container">
-        <h1>Commandes</h1>
-        <div class="commands">
-            <ul class="commands__list">
-                {% for command in commands %}
-                    <li class="commands__list__item">
-                        <div class="commands__list__item__left">
-                            <span>Commande n°{{ command.id }}</span>
-                        </div>
-                        <div class="commands__list__item__right">
-                            <span>le {{ command.date | date('d/m/Y') }}</span>
-                            <span>{{ command.price }},00€</span>
-                        </div>
-                    </li>
-                {% endfor %}  
-            </ul>
+<div class="cart-section">
+  <div class="d-flex justify-content-center align-items-center" style="padding-top: 24vh;">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="col">
+                        <h4><b>Commands</b></h4>
+                    </div>
+                </div>
+            </div>
+            {% for command in commands %}
+            <div class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                    <div class="col-8">
+                        <div class="row text-muted">Commande n°{{ command.id }}</div>
+                        <div class="row"><span>le {{ command.date | date('d/m/Y') }}</span></div>
+                    </div>
+                    <div class="col-4">{{ command.price }} &euro;</div>
+                </div>
+            </div>
+            {% endfor %}  
+            <div class="back-to-shop"><a href="/home">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
         </div>
-    </section>
+        <div class="col-md-4 summary">
+            <hr>
+            <div class="row">
+            
+               
+            </div>
+            <div class="row" style=" padding: 2vh 0;">
+                <div class="col">TOTAL PRICE</div>
+                <div class="col text-right">&euro;</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 {% endblock %}
