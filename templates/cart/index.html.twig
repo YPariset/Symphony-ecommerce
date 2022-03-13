@@ -9,10 +9,10 @@
 						<li><a href="/"><img src="https://docs.ypariset.fr/img/logo-black.png" width="35" height="25"></img></li></a>
 						<li><a class="text-black text-monospace text-decoration-none" href="/home">Home</a></li>
 						<li><a class="text-black text-monospace text-decoration-none" href="/cart">Cart</a></li>
-						<li><a class="text-black text-monospace text-decoration-none" href="/logout">Logout</a></li>
+						<li class="ml-auto mr-5"><a href="/user"><i class="fas fa-2xl fa-circle-user mr-3" style="color: black"></i></a><a class="text-black text-monospace text-decoration-none" href="/logout">Logout</a></li>
 					</ul>
 				</nav>
-			</header>
+</header>
 <div class="cart-section">
   <div class="d-flex justify-content-center align-items-center" style="padding-top: 13vh;">
     <div class="row">
@@ -39,7 +39,7 @@
             </div>
             {% else %}
                 <div class="row">
-                    <span class="border">Votre panier est vide</span>
+                    <span class="border">Your cart is empty</span>
                 </div>
 
             {% endfor %}

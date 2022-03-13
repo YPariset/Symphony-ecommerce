@@ -16,7 +16,7 @@
 <div class="cart-section">
   <div class="d-flex justify-content-center align-items-center" style="padding-top: 24vh;">
     <div class="row">
-        <div class="col-md-8 cart">
+        <div class="col-auto command">
             <div class="title">
                 <div class="row">
                     <div class="col">
@@ -34,19 +34,12 @@
                     <div class="col-4">{{ command.price }} &euro;</div>
                 </div>
             </div>
+             {% else %}
+                <div class="row">
+                    <span class="border">No order confirmed</span>
+                </div>
             {% endfor %}  
             <div class="back-to-shop"><a href="/home">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
-        </div>
-        <div class="col-md-4 summary">
-            <hr>
-            <div class="row">
-            
-               
-            </div>
-            <div class="row" style=" padding: 2vh 0;">
-                <div class="col">TOTAL PRICE</div>
-                <div class="col text-right">&euro;</div>
-            </div>
         </div>
     </div>
 </div>
